@@ -36,41 +36,39 @@ export default class HomeScreen extends React.Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <MapView
-                    style={{ flex: 1 }}
-                    region={{
-                        latitude: this.state.location.coords.latitude,
-                        longitude: this.state.location.coords.longitude,
-                        latitudeDelta: 0.0922,
-                        longitudeDelta: 0.0421
-                    }}
-                    onRegionChange={this._handleMapRegionChange}
-                >
-                    <MapView.Marker
-                        coordinate={this.state.location.coords}
-                        title="My Marker"
-                        description="Some description"
-                    />
-                </MapView>
-            </View>
+            <MapView
+                style={{ flex: 1 }}
+                region={{
+                    latitude: this.state.location.coords.latitude,
+                    longitude: this.state.location.coords.longitude,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421
+                }}
+                // onRegionChange={this._handleMapRegionChange}
+            >
+                <MapView.Marker
+                    coordinate={this.state.location.coords}
+                    title="My Marker"
+                    description="Some description"
+                />
+            </MapView>
         );
     }
 }
 
 
 const styles = StyleSheet.create({
-    // container: {
-    //     flex: 1,
-    //     alignItems: 'center',
-    //     justifyContent: 'center',
-    //     paddingTop: Constants.statusBarHeight,
-    //     backgroundColor: '#ecf0f1',
-    // },
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: Constants.statusBarHeight,
+        backgroundColor: '#ecf0f1',
     },
+    // container: {
+    //     flex: 1,
+    //     backgroundColor: '#fff',
+    // },
     paragraph: {
         margin: 24,
         fontSize: 18,
